@@ -407,6 +407,7 @@ main {
   width: auto;
   object-fit: contain;
   transform: scaleX(1) scale(2);
+  margin-right: -5rem;
 }
 
 .speech-bubble-slide5::after {
@@ -566,27 +567,54 @@ main {
     padding: 0 12px;
   }
 
-  /* Person images — significantly smaller on mobile */
+  /* Reset negative margins that cause overflow, but keep directional alignment */
+  .person-slide2-container,
+  .person-slide3-container,
+  .person-slide4-container,
+  .person-slide5-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Slide 2 — geser ke kanan */
+  .person-slide2-container {
+    justify-content: flex-end;
+  }
+
+  /* Slide 3 — geser ke kiri */
+  .person-slide3-container {
+    justify-content: flex-start;
+  }
+
+  /* Slide 4 — tengah */
+  .person-slide4-container {
+    justify-content: center;
+  }
+
+  /* Slide 5 — kanan */
+  .person-slide5-container {
+    justify-content: flex-end;
+  }
+
   .person-img {
-    max-height: fit-content;
-    transform: scaleX(-1) scale(1.2);
+    max-height: 45vh;
     width: auto;
+    transform: scaleX(-1) scale(1.2);
+    transform-origin: bottom center;
   }
 
   .person-img-slide1 {
-    margin-left: -50px;
+    margin-left: 0;
   }
 
-  .person-img-slide2 {
-    transform: scale(1.2);
-  }
-
-  .person-img-slide4 {
-    transform: scale(1.2);
-  }
-
+  .person-img-slide2,
+  .person-img-slide3,
+  .person-img-slide4,
   .person-img-slide5 {
+    max-height: 43vh;
+    width: auto;
     transform: scale(1.2);
+    transform-origin: bottom center;
   }
 
   /* Nav buttons — moved more to center */
@@ -648,6 +676,10 @@ main {
   }
 
   /* QR section on Slide 5 */
+  .qr-section {
+    bottom: 40%;
+  }
+
   .qr-code {
     width: 70px;
     height: 70px;
@@ -663,9 +695,18 @@ main {
     height: 20px;
   }
 
-  .speech-bubble::after {
+  #slide3 .speech-bubble::after {
     border-width: 45px 70px 0px 0;
+    left: 60%;
+    transform: translateX(-50%) rotate(-5deg);
+    bottom: -30px;
   }
+
+  #slide4 .speech-bubble::after {
+    left: 60%;
+    bottom: -40px;
+  }
+
   .content-wrapper {
     margin-top: 2rem;
   }
