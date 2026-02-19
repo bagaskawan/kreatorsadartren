@@ -260,6 +260,7 @@ main {
   border-width: 70px 90px 0px 0;
   border-color: white transparent transparent transparent;
   transform: rotate(90deg);
+  z-index: -1;
 }
 
 /* Slide 2 Layout */
