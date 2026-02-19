@@ -334,7 +334,6 @@ main {
 .person-img-slide4 {
   width: auto;
   object-fit: contain;
-  /* Adjust scale if needed, for now similar to others but no flip */
   transform: scale(2);
   transform-origin: bottom center;
 }
@@ -569,8 +568,13 @@ main {
 
   /* Person images — significantly smaller on mobile */
   .person-img {
-    max-height: clamp(150px, 40vw, 300px);
+    max-height: fit-content;
     transform: scaleX(-1) scale(1.2);
+    width: auto;
+  }
+
+  .person-img-slide1 {
+    margin-left: -50px;
   }
 
   .person-img-slide2 {
@@ -585,41 +589,42 @@ main {
     transform: scale(1.2);
   }
 
-  /* Nav buttons — bring closer to edge on small screens */
+  /* Nav buttons — moved more to center */
   .next-container {
-    right: 15px;
+    right: 10%;
   }
 
   .prev-container {
-    left: 15px;
+    left: 10%;
   }
 
   .bottom-section .next-button-container {
-    right: 15px;
+    right: 10%;
+    bottom: 8rem;
   }
 
   .next-button-container,
   .nav-button-container,
   .prev-container,
   .next-container {
-    bottom: 30px;
+    bottom: 8rem;
   }
 
-  /* Smaller nav button */
+  /* Slightly bigger nav button on mobile */
   .arrow-btn {
-    width: 48px;
-    height: 48px;
+    width: 58px;
+    height: 58px;
     border-width: 3px;
   }
 
   .arrow-icon {
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
   }
 
   .next-text,
   .nav-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   /* Header logos */
@@ -656,6 +661,20 @@ main {
   .white-separator-top,
   .white-separator-bottom {
     height: 20px;
+  }
+
+  .speech-bubble::after {
+    border-width: 45px 70px 0px 0;
+  }
+  .content-wrapper {
+    margin-top: 2rem;
+  }
+
+  .next-button-container,
+  .nav-button-container,
+  .prev-container,
+  .next-container {
+    position: fixed;
   }
 }
 
