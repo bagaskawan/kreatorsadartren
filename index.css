@@ -707,6 +707,14 @@ main {
     bottom: -40px;
   }
 
+  #slide5 .speech-bubble::after {
+    right: 25%;
+    left: auto;
+    bottom: -60px;
+    transform: rotate(90deg);
+    border-width: 70px 50px 0px 0;
+  }
+
   .content-wrapper {
     margin-top: 2rem;
   }
