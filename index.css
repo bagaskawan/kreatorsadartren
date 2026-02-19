@@ -297,7 +297,7 @@ main {
 .person-img-slide2 {
   width: auto;
   object-fit: contain;
-  transform: scaleX(1) scale(2);
+  transform: scaleX(-1) scale(2);
 }
 
 .person-img-slide3 {
@@ -607,7 +607,6 @@ main {
     margin-left: 0;
   }
 
-  .person-img-slide2,
   .person-img-slide3,
   .person-img-slide4,
   .person-img-slide5 {
@@ -615,6 +614,17 @@ main {
     width: auto;
     transform: scale(1.2);
     transform-origin: bottom center;
+  }
+
+  .person-img-slide2 {
+    max-height: 43vh;
+    width: auto;
+    transform: scaleX(-1) scale(1.2);
+    transform-origin: bottom center;
+  }
+
+  .person-img-slide3 {
+    margin-left: -4rem;
   }
 
   /* Nav buttons — moved more to center */
@@ -695,9 +705,13 @@ main {
     height: 20px;
   }
 
+  #slide2 .speech-bubble::after {
+    bottom: -50px;
+  }
+
   #slide3 .speech-bubble::after {
     border-width: 45px 70px 0px 0;
-    left: 60%;
+    left: 30%;
     transform: translateX(-50%) rotate(-5deg);
     bottom: -30px;
   }
@@ -743,13 +757,16 @@ main {
   }
 
   .person-img,
-  .person-img-slide2,
   .person-img-slide4,
   .person-img-slide5 {
     transform: scale(0.9);
   }
 
   .person-img {
+    transform: scaleX(-1) scale(0.9);
+  }
+
+  .person-img-slide2 {
     transform: scaleX(-1) scale(0.9);
   }
 
